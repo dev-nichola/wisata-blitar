@@ -1,0 +1,134 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+      "title": "Wisata Kota Blitar",
+      "version": "1.0"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:8000"
+      }
+    ],
+    "paths": {
+      "/kota": {
+        "get": {
+          "description": "Get tourism data in Blitar city",
+          "parameters": [
+            {
+                "name": "id",
+                "in": "query"
+            },
+            {
+                "name": "name",
+                "in": "query"
+            },
+            {
+                "name": "address",
+                "in": "query"
+            },
+            {
+                "name": "category",
+                "in": "query"
+            },
+            {
+                "name": "district",
+                "in": "query"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success get tourism data in Blitar city",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "data": {
+                        "type": "object",
+                        "properties": {
+                            "id" : {
+                                "type": "integer"
+                            },
+                            "name" : {
+                                "type": "string"
+                            },
+                            "description" : {
+                                "type": "string"
+                            },
+                            "category" : {
+                                "type": "string"
+                            },
+                            "district" : {
+                                "type": "string"
+                            },
+                            "regency" : {
+                                "type": "string"
+                            }
+                        }
+                      },
+                      "errors" : {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/kota/{id}" :{
+        "get" : {
+            "description": "Get tourism data in blitar city by id",
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path"
+                }
+            ],
+          "responses": {
+            "200": {
+              "description": "Success get tourism data in Blitar city by id",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "data": {
+                        "type": "object",
+                        "properties": {
+                            "id" : {
+                                "type": "integer"
+                            },
+                            "name" : {
+                                "type": "string"
+                            },
+                            "description" : {
+                                "type": "string"
+                            },
+                            "category" : {
+                                "type": "string"
+                            },
+                            "district" : {
+                                "type": "string"
+                            },
+                            "regency" : {
+                                "type": "string"
+                            }
+                        }
+                      },
+                      "errors" : {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        }
+      }
+    }
+
+

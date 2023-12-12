@@ -1,0 +1,134 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+      "title": "Wisata Kabupaten Blitar",
+      "version": "1.0"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:8000"
+      }
+    ],
+    "paths": {
+      "/kabupaten": {
+        "get": {
+          "description": "Get tourism data in Blitar regency",
+          "parameters": [
+            {
+                "name": "id",
+                "in": "query"
+            },
+            {
+                "name": "name",
+                "in": "query"
+            },
+            {
+                "name": "address",
+                "in": "query"
+            },
+            {
+                "name": "category",
+                "in": "query"
+            },
+            {
+                "name": "district",
+                "in": "query"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success get tourism data in Blitar regency",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "data": {
+                        "type": "object",
+                        "properties": {
+                            "id" : {
+                                "type": "integer"
+                            },
+                            "name" : {
+                                "type": "string"
+                            },
+                            "description" : {
+                                "type": "string"
+                            },
+                            "category" : {
+                                "type": "string"
+                            },
+                            "district" : {
+                                "type": "string"
+                            },
+                            "regency" : {
+                                "type": "string"
+                            }
+                        }
+                      },
+                      "errors" : {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/kabupaten/{id}" :{
+        "get" : {
+            "description": "Get tourism data in blitar regency by id",
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path"
+                }
+            ],
+          "responses": {
+            "200": {
+              "description": "Success get tourism data in Blitar regency by id",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "data": {
+                        "type": "object",
+                        "properties": {
+                            "id" : {
+                                "type": "integer"
+                            },
+                            "name" : {
+                                "type": "string"
+                            },
+                            "description" : {
+                                "type": "string"
+                            },
+                            "category" : {
+                                "type": "string"
+                            },
+                            "district" : {
+                                "type": "string"
+                            },
+                            "regency" : {
+                                "type": "string"
+                            }
+                        }
+                      },
+                      "errors" : {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        }
+      }
+    }
+
+
